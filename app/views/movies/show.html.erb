@@ -29,3 +29,43 @@
     </div>
   </div>
 </div>
+
+<!-- A Movie has many characters -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Characters
+      </li>
+
+      <% @movie.characters.each do |character| %>
+        <li class="list-group-item">
+          <a href="/characters/<%= character.id %>">
+            <%= character.actor_id %>
+          </a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A Movie has many actors -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Actors
+      </li>
+
+      <% @movie.actors.each do |actor| %>
+        <li class="list-group-item">
+          <a href="/actors/<%= actor.id %>">
+            <%= actor.created_at %>
+          </a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

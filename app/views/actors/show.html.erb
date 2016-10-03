@@ -20,3 +20,43 @@
     </div>
   </div>
 </div>
+
+<!-- A Actor has many characters -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Characters
+      </li>
+
+      <% @actor.characters.each do |character| %>
+        <li class="list-group-item">
+          <a href="/characters/<%= character.id %>">
+            <%= character.actor_id %>
+          </a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A Actor has many movies -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Movies
+      </li>
+
+      <% @actor.movies.each do |movie| %>
+        <li class="list-group-item">
+          <a href="/movies/<%= movie.id %>">
+            <%= movie.title %>
+          </a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
